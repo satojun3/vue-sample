@@ -66,3 +66,40 @@ var app7 = new Vue({
     ]
   }
 })
+
+Vue.component('watch-sample', {
+  props: ['val'],
+  template: '<p>{{ val.m1 }} {{ val.m2 }}</p>'
+})
+
+var app8 = new Vue({
+  el: '#app-8',
+  data: {
+    message: {
+        m1: "watchテスト",
+        m2: "watchテスト2"
+    }
+  }
+})
+app8.$watch('message', function (newValue, oldValue) {
+    // このコールバックは `app7.groceryList` の値が変わる時に呼ばれます
+    console.log('old: ', oldValue, ', new: ', newValue);
+})
+// app8.$data.message = "watchテスト実行"
+
+Vue.component('header-component', {
+    props: ['val', 'val2'],
+    template: `
+    <header>
+        <h1>{{ val }}</h1>
+        <div>{{ val2 }}</div>
+    </header>
+    `
+})
+var app9 = new Vue({
+    el: "#app-9",
+    data: {
+        title: 'Study Vue.js!',
+        subTitle: 'part1'
+    }
+})

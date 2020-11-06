@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +10,15 @@
 </head>
 
 <body>
+    <header id="app-9">
+        <header-component
+            v-bind:val="title"
+            v-bind:val2="subTitle"
+
+            >
+
+        </header-component>
+    </header>
     <h1 id="title">{{ title }}</h1>
     <p id="body">
         <span v-bind:title="message">
@@ -54,8 +64,16 @@
             </todo-item>
         </ol>
     </div>
+
+    <!-- 入力の監視 -->
+    <div id="app-8">
+        <watch-sample v-bind:val="message"></watch-sample>
+    </div>
 </body>
 
 <script src="./js/vue-sample1.js"></script>
-
+<header>
+    <h1></h1>
+    <div></div>
+</header>
 </html>
